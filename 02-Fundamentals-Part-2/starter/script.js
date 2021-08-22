@@ -192,20 +192,51 @@ GOOD LUCK 😀
 */
 
 
-const calcTip = (bill) => {
-  if (bill >= 50 && bill <= 300) {
-    return bill * 0.15
-  } else {
-    return bill * 0.2
-  }
-}
-const bills = [125, 555, 44];
+// const calcTip = (bill) => {
+//   if (bill >= 50 && bill <= 300) {
+//     return bill * 0.15
+//   } else {
+//     return bill * 0.2
+//   }
+// }
+// const bills = [125, 555, 44];
 
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[bills.length -1])]
-console.log(tips)
-const totals = [
-  bills[0] + tips[0],
-  bills[1] + tips[1],
-  bills[bills.length - 1] + tips[tips.length - 1],
-];
-console.log(totals)
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[bills.length -1])]
+// console.log(tips)
+// const totals = [
+//   bills[0] + tips[0],
+//   bills[1] + tips[1],
+//   bills[bills.length - 1] + tips[tips.length - 1],
+// ];
+// console.log(totals)
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // }
+  // calcAge: function () {
+  //   console.log(this)
+  //   return 2037 - this.birthYear;
+  // }
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age
+  },
+  getSummary: function () {
+    return `${this.firstName}is a ${this.calcAge()} old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+  }
+};
+
+console.log(jonas.calcAge())
+// console.log(jonas['calcAge'](1991))
+console.log(jonas.age)
+
+//Challenge
+console.log(jonas.getSummary())
