@@ -108,20 +108,43 @@ GOOD LUCK 😀
 // checkWinner()
 
 // good answer
-const calcAverage = (a, b, c) => (a + b + c) / 3;
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
 
-let scoreDolphins = calcAverage(85, 54, 41);
-let scoreKoalas = calcAverage(23, 34, 27);
-console.log(scoreDolphins, scoreKoalas)
+// let scoreDolphins = calcAverage(85, 54, 41);
+// let scoreKoalas = calcAverage(23, 34, 27);
+// console.log(scoreDolphins, scoreKoalas)
 
-const checkWinner = function (avgDolphins, avgKoalas) {
-  if (avgDolphins >= avgKoalas * 2) {
-    console.log(`Dolhins win (${avgDolphins} vs. ${avgKoalas})`);
-  } else if (avgKoalas >= avgDolphins * 2) {
-    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
-  } else {
-    console.log('No winners!')
-  }
-}
+// const checkWinner = function (avgDolphins, avgKoalas) {
+//   if (avgDolphins >= avgKoalas * 2) {
+//     console.log(`Dolhins win (${avgDolphins} vs. ${avgKoalas})`);
+//   } else if (avgKoalas >= avgDolphins * 2) {
+//     console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+//   } else {
+//     console.log('No winners!')
+//   }
+// }
 
-checkWinner(scoreDolphins, scoreKoalas)
+// checkWinner(scoreDolphins, scoreKoalas)
+
+// const friends = ['Micheal', 'Stiven', 'Peter'];
+// console.log(friends)
+
+// const y = new Array(1990, 1991, 1992, 1993)
+
+// console.log(friends.length)
+// console.log(friends[friends.length -1])
+
+// // arrayはconstでもmutable
+// friends[2] = 'Jay'
+// console.log(friends)
+
+// const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991, 'teacher', friends]
+// console.log(jonas)
+
+// const calcAge = function (birthYeah) {
+//   return 2037 - birthYeah
+// }
+// const years = [1990, 1967, 2008, 2010, 2021]
+
+// const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length -1])]
+// console.log(ages);
