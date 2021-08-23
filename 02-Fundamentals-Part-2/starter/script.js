@@ -256,30 +256,99 @@ TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.9
 GOOD LUCK 😀
 */
 
-const mark = {
-  fullName: "Mark Miller",
-  mass: 78,
-  height: 1.69,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2
-    return this.bmi
+// const mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2
+//     return this.bmi
+//   }
+// };
+
+// const john = {
+//   fullName: "John Smith",
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi;
+//   },
+// };
+
+// console.log(
+//   `${mark.calcBMI() > john.calcBMI() ? "Mark" : "John"}'s BMI (${
+//     mark.calcBMI() > john.calcBMI() ? mark.calcBMI() : john.calcBMI()
+//   }) is higher than ${mark.calcBMI() > john.calcBMI() ? "John's" : "Mark's"} (${
+//     mark.calcBMI() > john.calcBMI() ? john.calcBMI() : mark.calcBMI()
+//   })!`
+// );
+
+// console.log('Lifrint weight repetition 1')
+
+// for loop keeps running while condition is TRUE
+// for (let rep = 1; rep <= 10; rep++){
+//   console.log(`Lifrint weight repetition ${rep}`)
+// }
+
+// const jonas = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+// const types = [];
+
+// for (let i = 0; i < jonas.length; i++){
+//   console.log(jonas[i], typeof jonas[i])
+
+//   // Filling types array
+//   // types[i] = typeof jonas[i]
+
+//   types.push(typeof jonas[i])
+// }
+
+// console.log(types)
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++){
+//   ages.push(2037 - years[i])
+// }
+// console.log(ages)
+
+// console.log('--- only strings ---')
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== 'string') continue;
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// console.log('--- Break with number ---')
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] === 'number') break;
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+const jonas = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+
+for (let i = jonas.length - 1; i >= 0; i--){
+  console.log(i, jonas[i])
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-----Starting exercise ${exercise}`)
+
+  for (let rep = 1; rep < 6; rep++){
+    console.log(`Lifting weight repetition ${rep}`)
   }
-};
-
-const john = {
-  fullName: "John Smith",
-  mass: 92,
-  height: 1.95,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2;
-    return this.bmi;
-  },
-};
-
-console.log(
-  `${mark.calcBMI() > john.calcBMI() ? "Mark" : "John"}'s BMI (${
-    mark.calcBMI() > john.calcBMI() ? mark.calcBMI() : john.calcBMI()
-  }) is higher than ${mark.calcBMI() > john.calcBMI() ? "John's" : "Mark's"} (${
-    mark.calcBMI() > john.calcBMI() ? john.calcBMI() : mark.calcBMI()
-  })!`
-);
+}
