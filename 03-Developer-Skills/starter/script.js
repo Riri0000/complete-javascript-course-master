@@ -83,7 +83,6 @@
   // console.warn(measurement.value);
   // console.error(measurement.value);
 
-//   debugger;
 //   const kelvin = measurement.value + 273;
 //   return kelvin;
 // }
@@ -105,3 +104,30 @@ Use the problem-solving framework: Understand the problem and break it up into s
 TEST DATA 1: [17, 21, 23]
 TEST DATA 2: [12, 5, -5, 0, 4]
 */
+
+//my answer
+// const printForecast = (arr) => {
+//   const text = []
+//   for (let i = 0; i < arr.length; i++){
+//     text.push(`...${arr[i]}℃ in ${i + 1}days`)
+//   }
+//   console.log(text)
+// }
+
+// const arr1 = [17, 21, 23]
+// const arr2 = [12, 5, -5, 0, 4]
+
+// // printForecast(arr1)
+// // printForecast(arr2)
+
+// // good answer
+
+// const printForecast = (arr) => {
+//   let str = '';
+//   for (let i = 0; i < arr.lengh; i++) {
+//     str = str + `...${arr[i]}℃ in ${i + 1}days`
+//   }
+//   console.log(str)
+// }
+
+// printForecast(arr1)
