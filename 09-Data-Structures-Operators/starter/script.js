@@ -146,4 +146,32 @@ add(5, 3, 7, 2);
 add(8, 2, 5, 3, 2, 1, 4);
 
 const x = [23, 5, 7];
-add(...x)
+add(...x);
+
+console.log('-----OR-----');
+// Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+restaurant.numGuests = 22;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+
+// AND operator
+console.log('-----AND-----');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+console.log('Hello' && 23 && null && 'jonas');
+
+// Pratical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mashrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mashrooms', 'spinach');
