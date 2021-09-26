@@ -114,8 +114,8 @@ console.log(newMenu);
 const mainMenuCopy = [...restaurant.mainMenu];
 
 // Join 2 arrays
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
 // Iterables(反復可能な): arrays, strings, maps, sets. NOT objects
 const str = 'Jonas';
@@ -165,7 +165,6 @@ console.log(guests2);
 // Nullish: null and undifined (NOT 0 or '')
 const guestCorrrect = restaurant.numGuests ?? 10;
 console.log(guestCorrrect);
-
 
 // AND operator
 console.log('-----AND-----');
@@ -243,37 +242,46 @@ const game = {
 };
 
 //1
-const [player1, player2] = game.players
+const [player1, player2] = game.players;
 console.log(player1, player2);
 
 //2
-const [gk, ...fieldPlayers] = player1
+const [gk, ...fieldPlayers] = player1;
 console.log(gk, fieldPlayers);
 
 //3
-const allPlayers = [...player1, ...player2]
+const allPlayers = [...player1, ...player2];
 console.log(allPlayers);
 
 //4
-const players1Final = [...player1, 'Thiago', 'Coutinho', 'Perisic']
+const players1Final = [...player1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
 
 //5
 const {
-  odds: {
-    team1, x: draw, team2
-  }
-} = game
+  odds: { team1, x: draw, team2 },
+} = game;
 console.log(team1, draw, team2);
 
 //6
 const printGoals = function (...players) {
   console.log(players);
   console.log(`${players.length}scored`);
-}
+};
 
-printGoals(...game.scored)
+printGoals(...game.scored);
 
 //7
 team1 > team2 && console.log('team2 is likely to win! ');
 team1 < team2 && console.log('team1 is likely to win! ');
+
+// Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
