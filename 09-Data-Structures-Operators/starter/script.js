@@ -472,6 +472,7 @@ console.log(
 console.log(new Set('jonasschemedtmann').size);
 
 // Map
+// Map is iterable
 const rest = new Map();
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze, Italy');
@@ -496,6 +497,40 @@ console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 console.log(rest.has('categories'));
 rest.delete(2);
 console.log(rest);
+116;
 console.log(rest.size);
 // rest.clear();
 console.log(rest);
+
+// setを使わずにMap
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Jave'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try agein!'],
+]);
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(restaurant.openingHours));
+const hoursMap = new Map(Object.entries(restaurant.openingHours));
+console.log(hoursMap);
+
+// Quiz app
+console.log(question.get('question'));
+// keyが数字のときだけ
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// const answer = Number(prompt('Your answer'));
+// console.log(question.get(question.get('correct') === answer));
+
+// Convert map to array
+console.log([...question]);
+// console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
