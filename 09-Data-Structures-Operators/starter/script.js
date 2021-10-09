@@ -629,3 +629,108 @@ checkMiddleSeat('3E');
 
 console.log(new String('jonas'));
 console.log(typeof new String('jonas'));
+
+// Fix capitalization in name
+const passenger = 'jOnAs';
+const passengerLower = passenger.toLocaleLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+
+console.log(passengerCorrect);
+
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@jonas.Io';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+const priceJS = '288,97¥';
+const priceUS = priceJS.replace('¥', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to barding door 23. Boarding door 23!';
+
+// console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+
+// regular expression 正規表現
+// g option means 'global'
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const airPlane = 'Airbus A32neo';
+console.log(airPlane.includes('A320'));
+console.log(airPlane.includes('Boeing'));
+console.log(airPlane.includes('Airb'));
+
+if (airPlane.startsWith('Airbus') && airPlane.endsWith('neo')) {
+  console.log('Part of the NEW ARirbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLocaleLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Sockes and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schedtman'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schedtmann'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1))
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+
+// Padding
+// padStart() メソッドは、結果の文字列が指定した長さになるように、現在の文字列を他の文字列で (必要に応じて繰り返して) 延長します。延長は、現在の文字列の先頭から適用されます。
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(35, '+'));
+console.log('Jonas'.padStart(23, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(5792817987017187));
+console.log(maskCreditCard('120938109824089'));
+
+// Repeat
+const message2 = 'Bad weather... All Departures Delayed...';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'p'.repeat(n)}`);
+};
+
+planesInLine(4);
+planesInLine(6);
+planesInLine(3);
