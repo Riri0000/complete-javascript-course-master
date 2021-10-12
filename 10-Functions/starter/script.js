@@ -83,3 +83,19 @@ const high5 = function () {
   console.log('*+*');
 };
 document.body.addEventListener('click', high5);
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  }
+}
+
+const greeterHey = greet('Hey')
+greeterHey('Jonas')
+
+greet('Hello')('Jonas')
+
+// Challenge arrow function
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('Hi')('Jonas');
