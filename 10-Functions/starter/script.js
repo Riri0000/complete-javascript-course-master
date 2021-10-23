@@ -79,10 +79,10 @@ transformer('JavaSctipr is the best!', upperFirstWord);
 transformer('JavaSctipr is the best!', oneWord);
 
 // JS uses callbacks all the time
-const high5 = function () {
-  console.log('*+*');
-};
-document.body.addEventListener('click', high5);
+// const high5 = function () {
+//   console.log('*+*');
+// };
+// document.body.addEventListener('click', high5);
 
 const greet = function (greeting) {
   return function (name) {
@@ -149,3 +149,50 @@ book.apply(swiss, flightData);
 console.log(swiss);
 
 book.call(swiss, ...flightData);
+
+// Bind method
+// book.call(eurowings, 23, 'Sarah Williams');
+
+const bookEW = book.bind(eurowings);
+const bookLF = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Steven Williams');
+
+// 引数を予めセットできる.名前だけ渡せばいい状態にできる
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Jonas Schemdtman');
+bookEW23('Martha Cooper');
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = value => value + value * 0.23;
+
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+// another way
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  }
+}
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(100));
+console.log(addVAT2(23));
