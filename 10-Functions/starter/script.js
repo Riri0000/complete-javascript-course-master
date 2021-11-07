@@ -292,3 +292,19 @@ runOnce();
 })();
 
 (() => console.log('This will ALSO never run again'))();
+
+//closures
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
